@@ -32,18 +32,23 @@
                         $nuevaFabrica = $fabrica->EliminarEmpleado($empleado);
                         
                         if($nuevaFabrica != null)
-                        {
+                        {   
                             $nuevaFabrica->GuardarEnArchivo($path);
                             echo "Empleado eliminado con exito <br>";
                             echo "<a href='mostrar.php'>Mostrar empleados</a>";
+                            break;                            
                         }
                         else
                         {
                             echo "No se pudo eliminar al empleado" . "<br>";
                             echo "<a href = 'index.html'>Inicio</a>" . "<br>";
-                        }
-
-                        break;
+                        } 
+                        
+                        break; 
+                    }
+                    else
+                    {
+                        echo "El empleado con el legajo" . $legajo . "no se encuentra en la lista";
                     }      
                 }            
             }            

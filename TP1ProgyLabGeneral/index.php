@@ -6,23 +6,23 @@
     $empleado1 = new Empleado("Felipe","Bustos Gil",43171094,'M',100200,43000,"Mañana");
     $empleado2 = new Empleado("Carlos","GGS",43000000,'M',100250,45000,"Noche");
     $empleado3 = new Empleado("Carla","Medina",43100000,'F',100300,47000,"Tarde");
-    $fabrica1 = new Fabrica("Ubisoft Entertainment S. A.");
+    $fabrica1 = new Fabrica("Ubisoft Entertainment S. A.",5);
 
     echo $empleado1-> Hablar(["Ingles","Español","Frances"]);
     echo "<br>";
-    echo $empleado1->ToString();
+    echo $empleado1->__toString();
     echo "<br>";
     
     echo $empleado2-> Hablar(["Ingles","Español","Frances"]);
     echo "<br>";
     
-    echo $empleado2->ToString();
+    echo $empleado2->__toString();
     echo "<br>";
     
     echo $empleado3-> Hablar(["Ingles","Español","Frances"]);
     echo "<br>";
     
-    echo $empleado3->ToString();
+    echo $empleado3->__toString();
     echo "<br>";
     echo "<br>";
 

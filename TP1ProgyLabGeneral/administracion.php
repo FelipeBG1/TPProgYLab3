@@ -38,9 +38,15 @@
             $path = "Archivos/empleados.txt";
             $empleado = new Empleado($nombre,$apellido,$dni,$sexo,$legajo,$sueldo,$turno);
             $fabrica = new Fabrica("XD",7);
-            $fabrica = $fabrica->TraerDeArchivo($path);
             
-
+            if(!file_exists($path))
+            {
+                $archivo = fopen($path,"w");
+                fclose($archivo);
+            }
+            
+            $fabrica = $fabrica->TraerDeArchivo($path);            
+            
             if($fabrica->AgregarEmpleado($empleado))
             {                
                 $fabrica->GuardarEnArchivo($path);

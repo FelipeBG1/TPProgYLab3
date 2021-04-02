@@ -8,7 +8,7 @@
         private $_empleados;
         private $_razonSocial;
 
-        public function __construct($razonSocial,$cantidad)
+        public function __construct($razonSocial,$cantidad = 5)
         {
             $this->_razonSocial = $razonSocial;
             $this->_empleados = array();
@@ -67,7 +67,7 @@
 
             foreach($this->_empleados as $item)
             {
-                $cadena .= $item->ToString() . "<br>";
+                $cadena .= $item->__ToString() . "<br>";
             }
 
             $cadena .= "<br>" . "Cantidad máxima de empleados: " . $this->_cantidadMaxima . " - " . "Razón social: " . $this->_razonSocial
@@ -112,7 +112,7 @@
             {
                 foreach($this->_empleados as $item)
                 {
-                    fwrite($archivo, $item->ToString() . "\r\n");
+                    fwrite($archivo, $item->__toString() . "\r\n");
                      
                 }
                 fclose($archivo);         

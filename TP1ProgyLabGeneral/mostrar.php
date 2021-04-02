@@ -28,14 +28,14 @@
                     {
                         $array = explode(" - ",$linea);
                         $empleado = new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5],$array[6]);
-                        echo $empleado->ToString() . "<input type='hidden' name='legajo' value='$array[4]'> <input type='submit' value='Eliminar'>" . "<br>";
+                        echo $empleado->__toString() . "<a href = eliminar.php?legajo=$array[4]> Eliminar</a>" . "<br>";
                         
                     }
                 }
             }
             fclose($archivo); 
 
-            echo "<a href = 'index.html'>Inicio";
+            echo "<a href = 'index.html'>Inicio</a>";
         ?>
     </form>
 </body>

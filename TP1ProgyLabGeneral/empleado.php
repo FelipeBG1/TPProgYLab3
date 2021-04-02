@@ -50,9 +50,9 @@
             return $cadena . $resultado;
         }
 
-        public function ToString()
+        public function __toString()
         {
-            return parent::ToString() . " - " . $this->GetLegajo() . " - " . $this->GetSueldo() . " - " . $this->GetTurno();
+            return parent::__toString() . " - " . $this->GetLegajo() . " - " . $this->GetSueldo() . " - " . $this->GetTurno();
         }
       
     }
