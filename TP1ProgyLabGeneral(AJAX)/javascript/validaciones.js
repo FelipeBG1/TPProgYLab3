@@ -63,33 +63,26 @@ var ObtenerSueldoMaximo = function (turno) {
     }
     return sueldo;
 };
-var AdministrarValidaciones = function (e) {
-    var sueldo = document.getElementById("txtSueldo").value;
-    var sueldoMax = ObtenerSueldoMaximo(ObtenerTurnoSeleccionado());
-    var dniObtenido = document.getElementById("txtDni").value;
-    var legajoObtenido = document.getElementById("txtLegajo").value;
-    if (!ValidarCamposVacios("txtDni")
-        || !ValidarCamposVacios("txtApellido")
-        || !ValidarCamposVacios("txtNombre")
-        || !ValidarCamposVacios("txtSueldo")
-        || !ValidarCamposVacios("txtLegajo")) {
-        alert("Uno o varios campos se encuentran sin completar");
-        e.preventDefault();
+var AdministrarSpanError = function (id, bool) {
+    var span = document.getElementById(id);
+    if (bool) {
+        span.style.display = "block";
     }
-    if (!ValidarRangoNumerico(parseInt(sueldo), 8000, sueldoMax)) {
-        alert("El sueldo no se encuentra dentro de los limites");
-        e.preventDefault();
+    else {
+        span.style.display = "none";
     }
-    if (!ValidarRangoNumerico(parseInt(dniObtenido), 1000000, 55000000)) {
-        alert("Dni incorrecto.");
-        e.preventDefault();
+};
+var VerificarValidacionesLogin = function () {
+    var spanDni = document.getElementById("spanTxtDni").style.display;
+    var spanApellido = document.getElementById("spanTxtApellido").style.display;
+    if (spanDni === "none" && spanApellido === "none") {
+        return true;
     }
-    if (!ValidarRangoNumerico(parseInt(legajoObtenido), 100, 550)) {
-        alert("Legajo incorrecto.");
-        e.preventDefault();
-    }
-    if (!ValidarCombo("cboSexo", "---")) {
-        alert("Seleccione sexo");
-        e.preventDefault();
-    }
+    return false;
+};
+var AdministrarModificar = function ($dni) {
+    var input = document.getElementById("hiddenInput");
+    var form = document.getElementById("formMostrar");
+    input.value = $dni;
+    form.submit();
 };

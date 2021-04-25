@@ -7,6 +7,7 @@
         protected $_legajo;
         protected $_sueldo;
         protected $_turno;
+        protected $_pathFoto;
 
         public function __construct($nombre,$apellido,$dni,$sexo,$_legajo,$_sueldo,$_turno){
 
@@ -28,6 +29,14 @@
         public function GetTurno()
         {
             return $this->_turno;
+        }
+        public function GetPathFoto()
+        {
+            return $this->_pathFoto;
+        }
+        public function SetPathFoto($foto)
+        {
+            $this->_pathFoto = $foto;
         }
 
         public function Hablar($idioma)
@@ -52,10 +61,8 @@
 
         public function __toString()
         {
-            return parent::__toString() . " - " . $this->GetLegajo() . " - " . $this->GetSueldo() . " - " . $this->GetTurno();
+            return parent::__toString() . " - " . $this->GetLegajo() . " - " . $this->GetSueldo() . " - " . $this->GetTurno() . " - " . $this->GetPathFoto();
         }
       
     }
-
-
 ?>

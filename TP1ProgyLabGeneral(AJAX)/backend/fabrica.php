@@ -14,6 +14,11 @@
             $this->_empleados = array();
             $this->_cantidadMaxima = $cantidad;
         }
+
+        public function GetEmpleados()
+        {
+            return $this->_empleados;
+        }
         
         public function AgregarEmpleado($emp)
         {
@@ -92,16 +97,16 @@
                         
                         if($array[0] != "" && $array[0] != "\r\n")
                         {
-                            $empleado = new Empleado($array[0],$array[1],$array[2],$array[3],$array[4],$array[5],$array[6]);
+                            $empleado = new Empleado($array[1],$array[2],$array[0],$array[3],$array[4],$array[5],$array[6]);
+                            $empleado->SetPathFoto($array[7]);
                             $this->AgregarEmpleado($empleado);
+
                         }
                     }
                    
                 }
                  fclose($archivo); 
-            }
-
-            return $this;          
+            }    
         }
 
         public function GuardarEnArchivo($nombreArchivo)
