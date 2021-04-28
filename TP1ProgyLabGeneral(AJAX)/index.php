@@ -204,7 +204,7 @@
 
                     <tr>
                         <td align = "right "colspan="2" >
-                            <input type="reset" value="Limpiar">
+                            <input type="reset" onClick=CargarFrmAoM() value="Limpiar">
                         </td>
                     </tr>
 
@@ -214,13 +214,7 @@
                         </td>
                     </tr>
                 </form>            
-            </table>
-        
-        <!--
-            <div class="divs mostrar">
-        as
-        </div>
-            -->      
+            </table> 
         <br>
         
     </body>

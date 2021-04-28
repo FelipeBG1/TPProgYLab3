@@ -33,7 +33,7 @@ ValidarSesion("login.html");
                 </tbody>
             </table>
             <div class="divs links">
-                <a href="./backend/cerrarSesion.php">Cerrar sesion</a>
+                <a href="./backend/cerrarSesion.php">Log Out</a>
             </div>
         
 </div>

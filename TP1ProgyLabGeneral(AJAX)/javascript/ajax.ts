@@ -112,7 +112,7 @@ var CargarDatos : Function = () =>{
     form.append("txtSueldo",sueldo);
     form.append("rdoTurno",turno);
     form.append("foto",foto[0]);
-    form.append("hdnModificar",hidden);
+    form.append("hdnModificar",hidden);     
 
     ajax.Post("http://localhost/TP1ProgyLabGeneral(AJAX)/backend/administracion.php",Recargar,form);
 
