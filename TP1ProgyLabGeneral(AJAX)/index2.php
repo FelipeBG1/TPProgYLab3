@@ -9,15 +9,14 @@ include_once "./backend/validarSesion.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./javascript/funciones.js"></script>
+    <script src="./javascript/funcionesBD.js"></script>
     <link rel="stylesheet" href="estilos.css" type="text/css"/>
 </head>
 <body>
 <?php
-ValidarSesion("login.html");                
+ValidarSesion("loginBD.html");                
 ?>
 <div class="container">
-        <!--<div class="CajaInicio animated bounceInRight" style="width:1100px">-->
             <div class="divs links">Bustos Gil Felipe</div>
             <table>
                 <tbody>               
@@ -33,7 +32,7 @@ ValidarSesion("login.html");
                 </tbody>
             </table>
             <div class="divs links">
-                <a href="./backend/cerrarSesion.php">Log Out</a>
+                <a href="./backendBD/cerrarSesion.php">Log Out</a>
             </div>
         
 </div>
